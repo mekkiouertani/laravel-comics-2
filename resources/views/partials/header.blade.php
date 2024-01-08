@@ -15,7 +15,7 @@
         <ul>
             @foreach ($listnav as $item)
                 <li class="px-3 list-group-item text-uppercase fw-bold">
-                    <a{{ Route::currentRouteName() == 'home' ? 'active' : '' }} href="{{ route('home') }}">
+                    <a{{ Route::currentRouteName() == 'home' ? 'active' : '' }} href="{{ route('comics.index') }}">
                         {{ $item }}</a>
                 </li>
             @endforeach

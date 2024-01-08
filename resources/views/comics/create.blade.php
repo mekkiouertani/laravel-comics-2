@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <div class="bg-black text-white position-relative py-5">
+        <div class="bg-black text-white py-5">
             <div class="container">
                 <a class="btn btn-success mb-5" href="{{ route('comics.index') }}">
                     Back
@@ -19,16 +19,6 @@
                     <input class="form-control my-2" type="text" id="type" name="type" placeholder="Type">
                     <button class="btn btn-primary" type="submit">Add</button>
                 </form>
-            </div>
-        </div>
-
-        <div class="final-one">
-            <div class="container">
-                <div class="row">
-                    <div>
-
-                    </div>
-                </div>
             </div>
         </div>
     </main>
