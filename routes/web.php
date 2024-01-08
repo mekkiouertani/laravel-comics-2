@@ -19,7 +19,8 @@ Route::get('/', function () {
     $blueicons = config('db.blueicons');
     $footer = config('db.footerList');
     //dd($comics);
-    return view('home', compact('comics', 'blueicons', 'footer'));
+    return Redirect::route('comics.index');
+    /*     return view('home', compact('comics', 'blueicons', 'footer')); */
 })->name('home');
 
 /* Route::get('/show/{index}', function ($id) {
