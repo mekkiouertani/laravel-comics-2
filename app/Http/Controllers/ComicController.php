@@ -17,7 +17,9 @@ class ComicController extends Controller
     {
         //
         $comics = Comic::all();
-        return view('comics.index', compact('comics'));
+        $blueicons = config('db.blueicons');
+        $footer = config('db.footerList');
+        return view('comics.index', compact('comics', 'blueicons', 'footer'));
     }
 
     /**
@@ -27,8 +29,9 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
-        return view('comics.create');
+        $blueicons = config('db.blueicons');
+        $footer = config('db.footerList');
+        return view('comics.create', compact('blueicons', 'footer'));
     }
 
     /**
@@ -61,7 +64,9 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('comics.show', compact('comic'));
+        $blueicons = config('db.blueicons');
+        $footer = config('db.footerList');
+        return view('comics.show', compact('comic', 'blueicons', 'footer'));
     }
 
     /**

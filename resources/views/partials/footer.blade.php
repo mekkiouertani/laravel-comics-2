@@ -3,7 +3,7 @@
     <div id="all-top-main">
         <section id="bottom" class="p-3">
             <div class="container">
-                {{--  <ul class="w-100">
+                <ul class="w-100">
                     @foreach ($blueicons as $item)
                         <li class="text-uppercase d-flex align-items-baseline align-content-center ">
                             <div class="box-item-logo">
@@ -12,7 +12,7 @@
                             <p class="px-3 fs-6 fw-bold mt-4">{{ $item['text'] }}</p>
                         </li>
                     @endforeach
-                </ul> --}}
+                </ul>
             </div>
         </section>
     </div>
@@ -21,7 +21,7 @@
 <section id="foot">
     <div class="container d-flex justify-content-between ">
         <div class="left">
-            {{-- <ul class="mt-1 d-flex pb-5 " id="foot2">
+            <ul class="mt-1 d-flex pb-5 " id="foot2">
                 @foreach ($footer as $item)
                     <li id="lifoot">
                         <h4 class="text-uppercase"> {{ $item['title'] }}</h4>
@@ -32,10 +32,10 @@
                         </ul>
                     </li>
                 @endforeach
-            </ul> --}}
+            </ul>
         </div>
-        {{--   <div class="right">
+        <div class="right">
             <img src="{{ Vite::asset('../resources/img/dc-logo-bg.png') }}" alt="">
-        </div> --}}
+        </div>
     </div>
 </section>
