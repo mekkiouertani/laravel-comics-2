@@ -43,17 +43,21 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        $formData = $request->all();
-        $newComic = new Comic();
-        $newComic->title = $formData['title'];
-        $newComic->price = $formData['price'];
-        $newComic->description = $formData['description'];
-        $newComic->type = $formData['type'];
 
-        $newComic->sale_date = '2020-07-01';
-        $newComic->series = '2020-07-01';
-        $newComic->save();
-        return to_route('comics.index');
+        $request->validate([
+            'title' => 'required|min:5|max:255',
+            'price' => 'required',
+            'series' => 'required',
+            'type' => 'required',
+            'sale_date' => 'required'
+
+        ]);
+        $formData = $request->all(); # prendo i dati del form dalla request
+        //$newComic = new Comic(); # creo un nuovo prodotto
+        // $newComic->fill($formData); # assegno i valori del form al nuovo prodotto
+        //$newComic->save();  #redindirizzo l'utente alla pagina del nuovo prodotto appena creato
+        $newComic = Comic::create($formData); # metodo più veloce ma non consente cambiamenti
+        return to_route('comics.show', $newComic->id);
     }
 
     /**
@@ -92,12 +96,14 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         $formData = $request->all();
-        $comic->title = $formData['title'];
-        $comic->price = $formData['price'];
-        $comic->description = $formData['description'];
-        $comic->type = $formData['type'];
-        $comic->sale_date = '2020-07-01';
-        $comic->series = '2020-07-01';
+        /*  $comic->title = $formData['title'];
+         $comic->price = $formData['price'];
+         $comic->description = $formData['description'];
+         $comic->type = $formData['type'];
+         $comic->thumb = $formData['thumb'];
+         $comic->sale_date = '2020-07-01';
+         $comic->series = '2020-07-01'; */
+        $comic->fill($formData);
         $comic->update();
         return to_route('comics.show', $comic->id);
     }
@@ -111,6 +117,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('comics.index');
+        return to_route('comics.index')->with('message', "Il prodotto $comic->title è stato eliminato");
     }
 }

@@ -15,13 +15,15 @@
                     <input class="form-control my-2" type="text" id="title" name="title" placeholder="Title"
                         value="{{ old('title', $comic->title) }}">
                     <input class="form-control my-2" type="text" id="description" name="description"
-                        placeholder="Description" value="{{ 'description', old($comic->description) }}">
+                        placeholder="Description" value="{{ old('description', $comic->description) }}">
                     <input class="form-control my-2" type="text" id="thumb" name="thumb" placeholder="Image"
-                        value="{{ 'thumb', old($comic->thumb) }}">
+                        value="{{ old('thumb', $comic->thumb) }}">
                     <input class="form-control my-2" type="text" id="price" name="price" placeholder="Price"
-                        value="{{ 'price', old($comic->price) }}">
+                        value="{{ old('price', $comic->price) }}">
                     <input class="form-control my-2" type="text" id="type" name="type" placeholder="Type"
-                        value="{{ 'type', old($comic->type) }}">
+                        value="{{ old('type', $comic->type) }}">
+                    <input class="form-control my-2" type="text" id="sale_date" name="sale_date" placeholder="Sale Date"
+                        value="{{ old('sale_date', $comic->sale_date) }}">
                     <button class="btn btn-primary" type="submit">Add</button>
                 </form>
             </div>

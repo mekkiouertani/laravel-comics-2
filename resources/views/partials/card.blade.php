@@ -8,7 +8,7 @@
                             <div class="img-box">
                                 <img src="{{ $item['thumb'] }}" :alt="title" />
                             </div>
-                            <h5 class="text-white py-3 ">{{ $item['series'] }}</h5>
+                            <h5 class="text-white py-3 ">{{ $item['title'] }}</h5>
                         </div>
                     </a>
                 </div>
