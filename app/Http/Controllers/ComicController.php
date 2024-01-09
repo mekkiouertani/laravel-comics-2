@@ -77,7 +77,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $blueicons = config('db.blueicons');
+        $footer = config('db.footerList');
+        return view('comics.edit', compact('comic', 'blueicons', 'footer'));
     }
 
     /**
@@ -89,7 +91,15 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+        $comic->title = $formData['title'];
+        $comic->price = $formData['price'];
+        $comic->description = $formData['description'];
+        $comic->type = $formData['type'];
+        $comic->sale_date = '2020-07-01';
+        $comic->series = '2020-07-01';
+        $comic->update();
+        return to_route('comics.show', $comic->id);
     }
 
     /**
@@ -100,6 +110,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('comics.index');
     }
 }

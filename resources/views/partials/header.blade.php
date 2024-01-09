@@ -22,7 +22,7 @@
 
         </ul>
         {{-- <input type="text" placeholder="Cerca" class="mb-2"> --}}
-        <a href="{{ route('comics.create') }}" class="btn btn-primary">aggiungi un titolo</a>
+        <a href="{{ route('comics.create') }}" class="btn btn-primary">ADD</a>
     </div>
 
 </section>

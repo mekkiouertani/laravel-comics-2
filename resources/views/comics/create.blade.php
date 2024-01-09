@@ -1,6 +1,6 @@
 @extends('layouts.appshow')
 
-@section('title', 'Home')
+@section('title', 'Aggiungi un nuovo prodotto')
 
 @section('content')
     <main>
