@@ -18,10 +18,12 @@ class ComicController extends Controller
      */
     public function index(Request $request): View
     {
+        $blueicons = config('db.blueicons');
+        $footer = config('db.footerList');
         //dd($request->all());
         if (!empty($request->query('search'))) {
             $search = $request->query('search');
-            $comics = Comic::where('type,')->get();
+            $comics = Comic::where('type', $search)->get();
         } else {
             $comics = Comic::all();
             $blueicons = config('db.blueicons');
