@@ -6,6 +6,15 @@
     <main>
         <div class="bg-black text-white py-5">
             <div class="container">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <a class="btn btn-success mb-5" href="{{ route('comics.index') }}">
                     Back
                 </a>
@@ -19,8 +28,9 @@
                     <input class="form-control my-2" type="text" id="description" name="description"
                         placeholder="Description">
                     <input class="form-control my-2" type="text" id="thumb" name="thumb" placeholder="Image">
+                    <input class="form-control my-2" type="text" id="series" name="series" placeholder="serie">
                     <input class="form-control my-2" type="text" id="price" name="price" placeholder="Price">
-                    <input class="form-control my-2" type="text" id="sale_date" name="sale_date" placeholder="Sale Date">
+                    <input class="form-control my-2" type="date" id="sale_date" name="sale_date" placeholder="Sale Date">
                     <input class="form-control my-2" type="text" id="type" name="type" placeholder="Type">
                     <button class="btn btn-primary" type="submit">Add</button>
                 </form>

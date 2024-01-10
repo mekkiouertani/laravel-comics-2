@@ -103,9 +103,13 @@ artisan make:controller NomeController --resource
 # verifica tutte le rotte
 php artisan route:list --except-vendor
 
-# oltre al model si crea il controller, migrations e seeder
-php artisan make:model Comic -rcms
+# oltre al model si crea il controller, migrations e seeder e form request per validazione dati
+php artisan make:model Comic -rcms --request
 
 # rinnova l'informazione sull'autoloader, garantendo che le nuove classi o le modifiche alla struttura delle classi siano correttamente caricate
 composer dump-autoload
+
+#creare form request per validazione
+php artisan make:request StoreComicRequest
+'Comic' da sostituire con il nome model
 ```
